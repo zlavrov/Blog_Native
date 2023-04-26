@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th colspan="2">Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>INT</td>
+                </tr>
+                <tr>
+                    <td>description_comment</td>
+                    <td>TEXT</td>
+                </tr>
+                <tr>
+                    <td>user_autor</td>
+                    <td>INT(relation user id)</td>
+                </tr>
+                <tr>
+                    <td>createAt</td>
+                    <td>DATATIME</td>
+                </tr>
+                <tr>
+                    <td>updateAt</td>
+                    <td>DATATIME</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th colspan="2">Article</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>INT</td>
+                </tr>
+                <tr>
+                    <td>article_name</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>description_article</td>
+                    <td>TEXT</td>
+                </tr>
+                <tr>
+                    <td>user_autor</td>
+                    <td>INT(relation user id)</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>createAt</td>
+                    <td>DATATIME</td>
+                </tr>
+                <tr>
+                    <td>updateAt</td>
+                    <td>DATATIME</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th colspan="2">Blog</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>INT</td>
+                </tr>
+                <tr>
+                    <td>blog_name</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>description_blog</td>
+                    <td>TEXT</td>
+                </tr>
+                <tr>
+                    <td>user_autor</td>
+                    <td>INT(relation user id)</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>createAt</td>
+                    <td>DATATIME</td>
+                </tr>
+                <tr>
+                    <td>updateAt</td>
+                    <td>DATATIME</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th colspan="2">User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>INT</td>
+                </tr>
+                <tr>
+                    <td>first_name</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>last_name</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>user_name</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>role</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>avatar</td>
+                    <td>VARCHAR(255)</td>
+                </tr>
+                <tr>
+                    <td>createAt</td>
+                    <td>DATATIME</td>
+                </tr>
+                <tr>
+                    <td>updateAt</td>
+                    <td>DATATIME</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
+
+CREATE TABLE `User` (
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+`fname` VARCHAR(255), 
+`lname` VARCHAR(255), 
+`email` VARCHAR(255), 
+`username` VARCHAR(255) NOT NULL, 
+`password` VARCHAR(255) NOT NULL, 
+`role` set('ROLE_USER','ROLE_ADMIN') NOT NULL DEFAULT 'ROLE_USER', 
+`avatar` VARCHAR(255), 
+`createAt` DATETIME, 
+`updateAt` DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
